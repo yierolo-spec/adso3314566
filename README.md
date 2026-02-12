@@ -15,7 +15,7 @@
 |03  | Css        |Look & Fell - Cascading Style Sheets  |
 |04  | Javascript |Behavior - Programing Language        |
 
-![yierolo-spec](https://pbs.twimg.com/media/GPpFeTUWcAAhMG8.jpg)
+![yierolo-spec](http://127.0.0.1:5500/index.html/FOTO%20JEFF.png)
 [ADSO Files DRIVE](https://tinyurl.com/wnkk334u)
 
 [VERCEL URL](https://adso3314566-pink.vercel.app/)
