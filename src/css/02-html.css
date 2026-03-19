@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+body {
+            background-color: #000000;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23333333' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23666666' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23989898' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23cbcbcb' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23FEFEFE' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover;
+            
+            color: rgb(0, 0, 0);
+            font-family: "Bungee", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100dvh;
+            
+        .btn-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #abad2a;
+            color: #000;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            border: 3px solid white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .btn-home:hover {
+            background-color: #ada029;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(249, 249, 145, 0.5);
+        }
+            
+            main {
+                h1 {
+                    background-color: rgb(134, 131, 131);
+                    color: rgb(187, 184, 23);
+                    font-family: "bungee", serif;
+                    text-align: center;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-family: "bungee";
+                    font-size: 2.8rem;
+                    margin: 0;
+                }
+                
+                img {
+                    border: 6px solid rgb(169, 172, 39);
+                    border-radius: 50%;
+                    height: 240px;
+                    display: flex;
+                    margin: 1rem auto;
+                    object-fit: cover;
+                    width: 240px;
+                    
+                }
+                h4 {
+                    
+                    color: rgb(180, 178, 30);
+                    text-align: center;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                }
+            }
+            header {
+                h1 {
+                    font-size: 2rem;
+                }
+                h2 {
+                    font-size: 1rem;
+                    color:rgba(131, 161, 20, 0.6);
+                }
+                h1, h2 {
+                    text-align: center;
+                }
+            }
+            section {
+                background-color: rgba(177, 172, 172, 0.6);
+                border-radius: 0.2rem;
+                min-width: 380px;
+                padding: 1rem;
+
+            }
+
+
+            menu {
+                display: flex;
+                flex-direction: column;
+                gap: 0.7rem;
+                a:link, a:visited {
+                    background-color: rgb(0, 0, 0);
+                    color: rgb(190, 188, 18);
+                    border-radius: 10rem;
+                    padding: 0.4rem;
+                    display: flex;
+                    text-decoration: none;
+                    span {
+                        background-color: rgb(192, 182, 35);
+                        color: floralwhite;
+                        border-radius:50%;                      
+                        font-size: 2rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 80px;
+                        width: 80px;
+                    }
+                    h4 {
+                        margin: 0;
+                        text-align-last: left;
+                        text-indent: 0.2rem;
+                        width: 225px;
+                    }
+                small {
+                    display: block;
+                    font-size: 0.7rem;
+                    text-indent: 0.2rem;
+                    width: 225px;
+                    }
+                    transition: transform 0.4s ease-in;
+                    &:hover {
+                        transform: scale(1.05) translate(12px);
+                    }
+                    {}
+                }
+            }
+        }
+    
