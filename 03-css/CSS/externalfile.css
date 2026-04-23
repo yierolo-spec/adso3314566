@@ -1,0 +1,8 @@
+div.adso {
+            background: linear-gradient(#49673b 50%, #7b8f72 50%);
+            border-radius: 0.4rem;
+            color: white;
+            padding: 1rem;
+            margin: 4rem auto;
+            font-size: 3.6rem;
+}
