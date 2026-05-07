@@ -1,0 +1,129 @@
+<!---->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14-background</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 1.5rem;
+            font-family: Arial, sans-serif;
+            background-color: #fbf5f62f;
+            color: #371f1f;
+        }
+
+        main {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            margin-bottom: 0.25rem;
+            color: #2d0de2;
+        }
+
+        header h2 {
+            margin: 0.25rem 0;
+            font-weight: 400;
+            color: #2d0de2;
+        }
+
+        section h3 {
+            margin-top: 0;
+            color: #0d3fe2;
+        }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        figure.crash {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            margin-top: 1.5rem;
+        }
+
+        figure.crash div {
+            min-height: 170px;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            border: 3px solid #ffffff;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            color: white;
+            text-align: center;
+        }
+
+        figure.crash .box1 {
+            background-color: rgba(59, 130, 246, 0.85);
+        }
+
+        figure.crash .box2 {
+            background-image: url(imgs/weed.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        figure.crash .box3 {
+            background-image: url(imgs/weed.png);
+            background-repeat: repeat;
+            background-size: 120px 120px;
+        }
+
+        figure.crash .box4 {
+            background-image: url(imgs/weed.png);
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-size: 180%;
+        }
+
+        figure.crash .box5 {
+            background-image: url(imgs/weed.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        figure.crash span {
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(15, 23, 42, 0.35);
+        }
+    </style>
+</head>
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>    </a>
+    <main>
+        <header>
+            <h1>14 Background</h1>
+            <h2>background-color</h2>
+            <h2>background-image</h2>
+            <h2>background-repeat</h2>
+            <h2>background-position</h2>
+            <h2>background-size</h2>
+        </header>
+        <section>
+            <h3>Example Transparent Colors:</h3>
+            <figure class="crash">
+                <div class="box1" data-label="background-color"><span>background-color</span></div>
+                <div class="box2" data-label="background-image"><span>background-image</span></div>
+                <div class="box3" data-label="background-repeat"><span>background-repeat</span></div>
+                <div class="box4" data-label="background-position"><span>background-position</span></div>
+                <div class="box5" data-label="background-size"><span>background-size</span></div>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

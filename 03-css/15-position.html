@@ -1,0 +1,146 @@
+<!---->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-Position</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .box {
+            background: rgb(131, 2, 156);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .box h3 {
+            margin: 0 0 0.8rem 0;
+            border-bottom: 2px solid #8ce9f5;
+            padding-bottom: 0.5rem;
+        }
+
+        .demo {
+            height: 100px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .static {
+            background: #667eea;
+        }
+
+        .relative {
+            position: relative;
+            top: 15px;
+            left: 15px;
+            background: #fb93fb;
+            border: 2px;
+        }
+
+        .absolute-container {
+            position: relative;
+            height: 100px;
+            background: #fafafa;
+            border: 2px dashed #ccc;
+        }
+
+        .absolute {
+            position: absolute;
+            bottom: 9px;
+            right: 10px;
+            width: 75px;
+            height: 50px;
+            background: #4facfe;
+        }
+
+        .fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #10b981;
+            border-radius: 50%;
+            z-index: 100;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 20px;
+            background: #a8edea;
+            border: 2px solid #fed6e3;
+            margin-bottom: 3rem;
+        }
+
+        .desc {
+            font-size: 0.85rem;
+            color: #ffffff;
+            margin-top: 0.8rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+            <path
+                d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
+            </path>
+        </svg> </a>
+    </a>
+    <main>
+        <header>
+            <h1>15-Position</h1>
+            <h2>-Normal/Static</h2>
+            <h2>-Relative</h2>
+            <h2>-Absolute</h2>
+            <h2>-Fixed</h2>
+            <h2>-Sticky</h2>
+        </header>
+        <section>
+            <div class="box">
+                <h3>Static</h3>
+                <div class="demo static">Static
+
+                </div>
+                <div class="desc">Flujo normal (defecto)</div>
+            </div>
+            <div class="box">
+                <h3>Relative</h3>
+                <div class="demo relative">Relative</div>
+                <div class="desc">Desplazado de su posición</div>
+            </div>
+            <div class="box">
+                <h3>Absolute</h3>
+                <div class="absolute-container">
+                    <div class="demo absolute">Abs</div>
+                </div>
+                <div class="desc">Fija respecto a contenedor</div>
+            </div>
+            <div class="box">
+                <h3>Fixed</h3>
+                <div class="demo fixed">Fixed</div>
+                <div class="desc">Fija a la ventana</div>
+            </div>
+            <div class="box">
+                <h3>Sticky</h3>
+                <div class="demo sticky">Sticky</div>
+                <div class="desc">Se fija al desplazar</div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
