@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-Document - Sprite Animation</title>
+    <link rel="stylesheet" href="../src/css/02-html.css">
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        /* Estilos para el sprite */
+        div#sprite {
+            background: url('imgs/spriterman.png');
+            height: 1240px;
+            margin: 1rem auto;
+            width: 900px;
+        }
+
+        div#sprite.sp1 {
+            background-position: calc(-348px * 0) 0;
+        }
+
+        div#sprite.sp2 {
+            background-position: calc(-348px * 1) 0;
+        }
+
+        div#sprite.sp3 {
+            background-position: calc(-348px * 2) 0;
+        }
+
+        div#sprite.sp4 {
+            background-position: calc(-348px * 3) 0;
+        }
+
+        div#sprite.sp5 {
+            background-position: calc(-348px * 4) 0;
+        }
+
+        div#sprite.sp6 {
+            background-position: calc(-348px * 5) 0;
+        }
+        
+        div#sprite.sp6 {
+            background-position: calc(-348px * 6) 0;
+        }
+
+        /* Estilos para el segundo sprite */
+        div#sprite2 {
+            background: url('img/sprite.png') no-repeat;
+            height: 400px;
+            margin: 1rem auto;
+            width: 330px;
+        }
+
+        div#sprite2.sp1 {
+            background-position: calc(-320px * 0) 0;
+        }
+
+        div#sprite2.sp2 {
+            background-position: calc(-320px * 1) 0;
+        }
+
+        div#sprite2.sp3 {
+            background-position: calc(-320px * 2) 0;
+        }
+
+        div#sprite2.sp4 {
+            background-position: calc(-320px * 3) 0;
+        }
+
+        div#sprite2.sp5 {
+            background-position: calc(-320px * 4) 0;
+        }
+
+        /* Estilos adicionales para mejorar la presentación */
+        .sprite-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sprite-item {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .sprite-item p {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <a href="../02-html/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+            <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+        </svg>
+    </a>
+    <main>
+        <header>
+            <h1>01-Document - Sprite Animation</h1>
+            <h2>Defines basic structure of an HTML5 document with sprite animations.</h2>
+        </header>
+        
+        <section>
+            <h3>This is a title</h3>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error dolorem quos dolorum voluptatem dolore laboriosam unde sint atque deleniti vel, amet voluptas magni, fuga, praesentium explicabo! Ipsa quis ratione iure!
+            </p>
+            
+            <div class="sprite-container">
+                <div class="sprite-item">
+                    <div id="sprite" class="sp1"></div>
+                    <p>Sprite Animation 1 - Spriterman</p>
+                </div>
+                
+                <div class="sprite-item">
+                    <div id="sprite2" class="sp1"></div>
+                    <p>Sprite Animation 2 - Custom Sprite</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Control para el primer sprite
+        const sprite = document.getElementById('sprite')
+        const numSprite = 7
+        let count = 1
+        
+        setInterval(() => {
+            sprite.className = ''
+            sprite.classList.add('sp' + count)
+            if (count == numSprite) {
+                count = 1
+            } else {
+                count++
+            }
+        }, 150)
+
+        // Control para el segundo sprite
+        const sprite2 = document.getElementById('sprite2')
+        const numSprite2 = 6
+        let count2 = 1
+
+        setInterval(() => {
+            sprite2.className = ''
+            sprite2.classList.add('sp' + count2)
+            if (count2 == numSprite2) {
+                count2 = 1
+            } else {
+                count2++
+            }
+        }, 80)
+    </script>
+</body>
+</html>
