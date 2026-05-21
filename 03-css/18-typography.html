@@ -1,0 +1,106 @@
+<!---->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18 Tipography</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+    
+        .example {
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 1rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        .example h3 {
+            margin: 0 0 1rem;
+            color: #fff;
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .typography-demo {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .typography-demo p {
+            margin: 0;
+            padding: 0.8rem;
+            border-radius: 0.75rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            line-height: 1.5;
+        }
+
+        .color-demo .red { color: #ff6b6b; }
+        .color-demo .green { color: #4ecdc4; }
+
+        .family-demo .serif { font-family: 'Times New Roman', serif; }
+        .family-demo .sans { font-family: Arial, sans-serif; }
+
+        .size-demo .small { font-size: 0.9rem; }
+        .size-demo .large { font-size: 1.6rem; }
+
+        .weight-demo .light { font-weight: 300; }
+        .weight-demo .bold { font-weight: 700; }
+
+    </style>
+</head>
+
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+            <path
+                d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
+            </path>
+        </svg>
+    </a>
+    <main>
+        <header>
+            <h1>18-Tipography</h1>
+            <h2>- Color</h2>
+            <h2>- Family</h2>
+            <h2>- Size</h2>
+            <h2>- Weight</h2>
+        </header>
+        <section>
+            <article class="example">
+            <h3>Color</h3>
+            <div class="typography-demo color-demo">
+                <p class="red">Ejemplo en rojo</p>
+                <p class="green">Ejemplo en turquesa</p>
+            </div>
+        </article>
+
+        <article class="example">
+            <h3>Family</h3>
+            <div class="typography-demo family-demo">
+                <p class="serif">Serif: Times New Roman</p>
+                <p class="sans">Sans-serif: Arial</p>
+            </div>
+        </article>
+
+        <article class="example">
+            <h3>Size</h3>
+            <div class="typography-demo size-demo">
+                <p class="small">Tamaño pequeño</p>
+                <p class="large">Tamaño grande</p>
+            </div>
+        </article>
+
+        <article class="example">
+            <h3>Weight</h3>
+            <div class="typography-demo weight-demo">
+                <p class="light">Peso light</p>
+                <p class="bold">Peso bold</p>
+            </div>
+        </article>
+        </section>
+    </main>
+</body>
+</html>

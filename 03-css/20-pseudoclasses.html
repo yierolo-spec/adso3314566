@@ -1,0 +1,138 @@
+<!---->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 Pseudoclasses</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        section {
+            display: grid;
+            gap: 1rem;
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .example {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+
+        .example h3 {
+            margin: 0 0 0.8rem;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .example a,
+        .example button,
+        .example input,
+        .example p,
+        .example ul {
+            margin: 0;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .example a {
+            color: #7fd3ff;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            display: inline-block;
+        }
+
+        .example a:hover {
+            color: #ffd369;
+        }
+
+        .example a:active {
+            color: #ff8c42;
+        }
+
+        .example a:visited {
+            color: #d39cff;
+        }
+
+        .example input {
+            width: 100%;
+            padding: 0.6rem;
+            border-radius: 0.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        .example .first-letter:first-letter {
+            font-size: 2rem;
+            color: #ffd369;
+        }
+
+        .example .first-line:first-line {
+            font-weight: bold;
+            color: #7fd3ff;
+        }
+
+        .example li:first-child {
+            color: #ffd369;
+            font-weight: 700;
+        }
+
+        .before-after::before {
+            content: "Antes » ";
+            color: #7fd3ff;
+        }
+
+        .before-after::after {
+            content: " « Después";
+            color: #ffd369;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>    </a>
+    <main>
+        <header>
+            <h1>20-Pseudoclasses</h1>
+            <h2>Is used to define a special state of an element.</h2>
+        </header>
+        <section>
+            <article class="example">
+                <h3>:link / :visited / :hover / :active</h3>
+                <p><a href="#">Enlace normal</a></p>
+                <p><small>Haz clic y vuelve para ver <code>:visited</code>.</small></p>
+            </article>
+
+            <article class="example">
+                <h3>:focus</h3>
+                <input type="text" placeholder="Haz foco aquí" />
+            </article>
+
+            <article class="example">
+                <h3>:first-letter / :first-line</h3>
+                <p class="first-line">Esta es una línea de ejemplo que muestra cómo se aplica la pseudoclase <code>:first-line</code> y también tiene un estilo especial en la primera letra.</p>
+            </article>
+
+            <article class="example">
+                <h3>:first-child</h3>
+                <ul>
+                    <li>Primer elemento</li>
+                    <li>Segundo elemento</li>
+                    <li>Tercer elemento</li>
+                </ul>
+            </article>
+
+            <article class="example">
+                <h3>:before / :after</h3>
+                <p class="before-after">Texto con contenido generado.</p>
+            </article>
+
+        </section>
+    </main>
+</body>
+</html>

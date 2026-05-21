@@ -1,0 +1,123 @@
+<!---->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22 Cursors</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        main {
+            font-family: sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .cursor-box {
+            border: 2px solid #333;
+            background-color: #000000;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            min-height: 80px;
+        }
+
+        .cursor-box:hover {
+            background-color: #870bf3;
+        }
+
+        /* Clases de cursores basadas en tu imagen */
+        .alias {
+            cursor: alias;
+        }
+
+        .crosshair {
+            cursor: crosshair;
+        }
+
+        .help {
+            cursor: help;
+        }
+
+        .move {
+            cursor: move;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .progress {
+            cursor: progress;
+        }
+
+        .wait {
+            cursor: wait;
+        }
+
+        .text {
+            cursor: text;
+        }
+
+        .not-allowed {
+            cursor: not-allowed;
+        }
+
+        .n-resize {
+            cursor: n-resize;
+        }
+
+        .ne-resize {
+            cursor: ne-resize;
+        }
+
+        /* Ejemplo de cursor personalizado con imagen */
+        .custom {
+            cursor: url('https://cdn-icons-png.flaticon.com/32/1077/1077114.png'), auto;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+            <path
+                d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
+            </path>
+        </svg> </a>
+    <main>
+        <header>
+            <h1>22-Cursors</h1>
+            <h2>Specifies the mouse cursor to be displayed when pointing over an element.</h2>
+        </header>
+        <section>
+            <div class="cursor-box pointer">Pointer</div>
+            <div class="cursor-box crosshair">Crosshair</div>
+            <div class="cursor-box help">Help</div>
+            <div class="cursor-box move">Move</div>
+            <div class="cursor-box progress">Progress</div>
+            <div class="cursor-box wait">Wait</div>
+            <div class="cursor-box text">Text</div>
+            <div class="cursor-box not-allowed">Not Allowed</div>
+            <div class="cursor-box n-resize">N-Resize</div>
+            <div class="cursor-box ne-resize">NE-Resize</div>
+            <div class="cursor-box custom">Custom (PNG)</div>
+        </section>
+    </main>
+</body>
+
+</html>

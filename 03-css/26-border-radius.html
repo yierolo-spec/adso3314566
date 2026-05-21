@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26-border-radius</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        /* Estilos base para centrar y dar estructura */
+        main { 
+            font-family: sans-serif; 
+            max-width: 400px; 
+            margin: 20px auto; 
+            padding: 20px; 
+        }
+
+        .flex-container { 
+            display: flex; 
+            gap: 60px; 
+            flex-wrap: wrap; 
+            margin-top: 25px; 
+        }
+        
+        /* Caja base común */
+        .box {
+            width: 160px;
+            height: 160px;
+            background-color: #3498db;
+            border: 3px solid #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Ejemplos de combinaciones de border-radius */
+
+        /* 1 valor: Afecta a las 4 esquinas por igual */
+        .radius-all {
+            border-radius: 20px;
+        }
+
+        /* 2 valores: [arriba-izquierda y abajo-derecha] [arriba-derecha y abajo-izquierda] */
+        .radius-diagonal {
+            border-radius: 40px 0 0 40px;
+        }
+
+        /* 4 valores independientes: top-left, top-right, bottom-right, bottom-left */
+        .radius-custom {
+            border-radius: 50px 20px 0px 15px;
+        }
+
+        /* Usando porcentajes: 50% en un elemento cuadrado crea un círculo perfecto */
+        .radius-circle {
+            border-radius: 50%;
+            background-color: #e74c3c; /* Cambiamos el color para que resalte */
+        }
+
+    </style>
+</head>
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+    </a>
+    <main>
+        <header>
+            <h1>26-border-radius</h1>
+            <h2>Used to define the radius of the element's corners.</h2>
+        </header>
+        
+        <section class="flex-container">
+            <div class="box radius-all">
+                1 Valor<br>(20px)
+            </div>
+
+            <div class="box radius-diagonal">
+                4 Valores<br>(40px 0 0 40px)
+            </div>
+
+            <div class="box radius-custom">
+                4 Valores<br>(50px 20px 0 15px)
+            </div>
+
+            <div class="box radius-circle">
+                Porcentaje<br>(50%)
+            </div>
+        </section>
+    </main>
+</body>
+</html>
