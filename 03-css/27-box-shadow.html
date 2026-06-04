@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27-box-shadow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d1b3e;
+            font-family: system-ui, 'Segoe UI', sans-serif;
+            padding: 2rem;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* ── Fondo con rayos SVG ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cline x1='120' y1='120' x2='-60' y2='-60' stroke='%23cc00ee' stroke-width='7'/%3E%3Cline x1='120' y1='120' x2='-60' y2='80' stroke='%23cc00ee' stroke-width='6'/%3E%3Cline x1='120' y1='120' x2='-60' y2='200' stroke='%23cc00ee' stroke-width='5'/%3E%3Cline x1='120' y1='120' x2='20' y2='400' stroke='%23cc00ee' stroke-width='5'/%3E%3Cline x1='120' y1='120' x2='220' y2='400' stroke='%23cc00ee' stroke-width='5'/%3E%3Cline x1='120' y1='120' x2='280' y2='-60' stroke='%23cc00ee' stroke-width='5'/%3E%3Cline x1='120' y1='120' x2='180' y2='-60' stroke='%23cc00ee' stroke-width='4'/%3E%3Ccircle cx='120' cy='120' r='28' fill='%23e8d8f8' opacity='0.85'/%3E%3Cline x1='82%25' y1='18%25' x2='110%25' y2='-5%25' stroke='%23cc00ee' stroke-width='6'/%3E%3Cline x1='82%25' y1='18%25' x2='110%25' y2='22%25' stroke='%23cc00ee' stroke-width='6'/%3E%3Cline x1='82%25' y1='18%25' x2='110%25' y2='45%25' stroke='%23cc00ee' stroke-width='5'/%3E%3Cline x1='82%25' y1='18%25' x2='68%25' y2='-5%25' stroke='%23cc00ee' stroke-width='5'/%3E%3Cline x1='82%25' y1='18%25' x2='58%25' y2='60%25' stroke='%23cc00ee' stroke-width='5'/%3E%3Cline x1='82%25' y1='18%25' x2='88%25' y2='60%25' stroke='%23cc00ee' stroke-width='4'/%3E%3Cline x1='82%25' y1='18%25' x2='78%25' y2='60%25' stroke='%23cc00ee' stroke-width='4'/%3E%3Ccircle cx='82%25' cy='18%25' r='32' fill='%23e8d8f8' opacity='0.8'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
+        }
+
+        /* ── Botón de regreso ── */
+        .btn-home {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #1e2a54;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #9933cc;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s, transform 0.15s;
+            z-index: 100;
+        }
+
+        .btn-home:hover {
+            background: #2a1a4a;
+            border-color: #cc00ee;
+            transform: scale(1.07);
+        }
+
+        /* ── Layout principal ── */
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(20, 20, 30, 0.72);
+            border-radius: 2rem;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #ccc;
+            font-weight: normal;
+            font-size: 1rem;
+        }
+
+        h3 {
+            color: #fffa;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        /* ── Cajas demo ── */
+        div.box {
+            background-color: #0006;
+            height: 140px;
+            margin: 2rem auto;
+            width: 200px;
+        }
+
+        div.box1 { box-shadow: 0 0 12px #fff; }
+        div.box2 { box-shadow: -10px -10px 24px 0 #fff; }
+        div.box3 { box-shadow: 0 0 20px #fff inset; }
+        div.box4 {
+            box-shadow:
+                4px  4px  0 4px #cc0,
+                8px  8px  0 6px #00c,
+                12px 12px 0 8px #c00;
+        }
+
+        /* ── Sección imágenes ── */
+        div.images {
+            display: flex;
+            justify-content: center;
+            margin-block: 2rem;
+            gap: 1rem;
+        }
+
+        div.images img:first-child {
+            box-shadow: 0 0 12px #fff;
+        }
+
+        div.images img:last-child {
+            filter: drop-shadow(0 0 12px #fff);
+        }
+
+        /* ── Imágenes generales ── */
+        body main section img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.28));
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón de regreso -->
+    <a href="/src/css/03-css.css" class="btn-home" aria-label="Volver">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#ffffff" viewBox="0 0 256 256">
+            <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+        </svg>
+    </a>
+
+    <main>
+        <header>
+            <h1>27-box-shadow</h1>
+            <h2>Defines basic structure of an HTML5 document.</h2>
+        </header>
+
+        <section>
+            <h3>box-shadow: 0 0 12px #fff</h3>
+            <div class="box box1"></div>
+
+            <h3>box-shadow: -10px -10px 24px 0 #fff</h3>
+            <div class="box box2"></div>
+
+            <h3>box-shadow: 0 0 20px #fff inset</h3>
+            <div class="box box3"></div>
+
+            <h3>box-shadow: multiple</h3>
+            <div class="box box4"></div>
+
+            <h3>box-shadow VS drop-shadow()</h3>
+            <div class="images">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23333'/%3E%3Ccircle cx='100' cy='90' r='50' fill='%23f4c542'/%3E%3Ccircle cx='75' cy='80' r='8' fill='white'/%3E%3Ccircle cx='125' cy='80' r='8' fill='white'/%3E%3Cpath d='M70 120 L100 145 L130 120' stroke='%23aa8866' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" width="160" height="160" alt="box-shadow demo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23333'/%3E%3Ccircle cx='100' cy='90' r='50' fill='%23f4c542'/%3E%3Ccircle cx='75' cy='80' r='8' fill='white'/%3E%3Ccircle cx='125' cy='80' r='8' fill='white'/%3E%3Cpath d='M70 120 L100 145 L130 120' stroke='%23aa8866' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" width="160" height="160" alt="drop-shadow demo">
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

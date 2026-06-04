@@ -1,0 +1,158 @@
+<!---->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28-challenge-shadow</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        figure.frame {
+            background: #fff;
+            height: calc(22 * 30px);
+            width: calc(22 * 40px);
+            margin: 2rem auto;
+            zoom: 0.60;
+            position: relative;
+        }
+
+        div.squares {
+            background: url(../03-css/imgs/square.png);
+            opacity: 0.4;
+            z-index: 1;
+            position: absolute;
+            inset: 0;
+            height: 100%;
+        }
+
+        div.saitama {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background-color: #fff;
+            height: 20px;
+            width: 20px;
+            box-shadow: 
+                        200px 0 0 0 rgb(0, 0, 0),
+                        220px 0 0 0 rgb(0, 0, 0),
+                        240px 0 0 0 rgb(0, 0, 0),
+                        260px 0 0 0 rgb(0, 0, 0),
+                        280px 0 0 0 rgb(0, 0, 0),
+                        300px 0 0 0 rgb(0, 0, 0),
+
+                        160px 20px 0 0 rgb(0, 0, 0),
+                        180px 20px 0 0 rgb(0, 0, 0),
+                        200px 20px 0 0 rgb(255, 0, 0),
+                        220px 20px 0 0 rgb(255, 0, 0),
+                        240px 20px 0 0 rgb(255, 0, 0),
+                        260px 20px 0 0 rgb(255, 0, 0),
+                        280px 20px 0 0 rgb(255, 0, 0),
+                        300px 20px 0 0 rgb(255, 0, 0),
+                        320px 20px 0 0 rgb(0, 0, 0),
+                        340px 20px 0 0 rgb(0, 0, 0),
+
+                        140px 40px 0 0 rgb(0, 0, 0),
+                        160px 40px 0 0 rgb(255, 0, 0),
+                        180px 40px 0 0 rgb(255, 0, 0),
+                        200px 40px 0 0 rgb(255, 0, 0),
+                        220px 40px 0 0 rgb(255, 0, 0),
+                        240px 40px 0 0 rgb(255, 0, 0),
+                        260px 40px 0 0 rgb(255, 0, 0),
+                        280px 40px 0 0 rgb(255, 0, 0),
+                        300px 40px 0 0 rgb(255, 0, 0),
+                        320px 40px 0 0 rgb(255, 0, 0),
+                        340px 40px 0 0 rgb(255, 0, 0),
+                        360px 40px 0 0 rgb(0, 0, 0),
+
+                        120px 60px 0 0 rgb(0, 0, 0),
+                        140px 60px 0 0 rgb(255, 0, 0),
+                        160px 60px 0 0 rgb(255, 0, 0),
+                        180px 60px 0 0 rgb(255, 0, 0),
+                        200px 60px 0 0 rgb(255, 0, 0),
+                        220px 60px 0 0 rgb(255, 0, 0),
+                        240px 60px 0 0 rgb(255, 0, 0),
+                        260px 60px 0 0 rgb(255, 0, 0),
+                        280px 60px 0 0 rgb(255, 0, 0),
+                        300px 60px 0 0 rgb(255, 0, 0),
+                        320px 60px 0 0 rgb(255, 0, 0),
+                        340px 60px 0 0 rgb(255, 0, 0),
+                        360px 60px 0 0 rgb(255, 0, 0),
+                        380px 60px 0 0 rgb(0, 0, 0),
+
+                        120px 80px 0 0 rgb(0, 0, 0),
+                        140px 80px 0 0 rgb(255, 0, 0),
+                        160px 80px 0 0 rgb(255, 0, 0),
+                        180px 80px 0 0 rgb(255, 0, 0),
+                        200px 80px 0 0 rgb(255, 0, 0),
+                        220px 80px 0 0 rgb(255, 0, 0),
+                        240px 80px 0 0 rgb(255, 0, 0),
+                        260px 80px 0 0 rgb(255, 0, 0),
+                        280px 80px 0 0 rgb(255, 0, 0),
+                        300px 80px 0 0 rgb(255, 0, 0),
+                        320px 80px 0 0 rgb(255, 0, 0),
+                        340px 80px 0 0 rgb(255, 0, 0),
+                        360px 80px 0 0 rgb(255, 0, 0),
+                        380px 80px 0 0 rgb(0, 0, 0),
+
+                        120px 100px 0 0 rgb(0, 0, 0),
+                        140px 100px 0 0 rgb(255, 0, 0),
+                        160px 100px 0 0 rgb(255, 0, 0),
+                        180px 100px 0 0 rgb(255, 0, 0),
+                        200px 100px 0 0 rgb(255, 0, 0),
+                        220px 100px 0 0 rgb(255, 0, 0),
+                        240px 100px 0 0 rgb(255, 0, 0),
+                        260px 100px 0 0 rgb(255, 0, 0),
+                        280px 100px 0 0 rgb(255, 0, 0),
+                        300px 100px 0 0 rgb(255, 0, 0),
+                        320px 100px 0 0 rgb(255, 0, 0),
+                        340px 100px 0 0 rgb(255, 0, 0),
+                        360px 100px 0 0 rgb(255, 0, 0),
+                        380px 100px 0 0 rgb(255, 0, 0),
+                        300px 100px 0 0 rgb(255, 0, 0),
+                        320px 100px 0 0 rgb(0, 0, 0),
+                        
+                        120px 120px 0 0 rgb(0, 0, 0),
+                        140px 120px 0 0 rgb(255, 0, 0),
+                        160px 120px 0 0 rgb(255, 0, 0),
+                        180px 120px 0 0 rgb(255, 0, 0),
+                        200px 120px 0 0 rgb(255, 0, 0),
+                        220px 120px 0 0 rgb(255, 0, 0),
+                        240px 120px 0 0 rgb(255, 0, 0),
+                        260px 120px 0 0 rgb(255, 0, 0),
+                        280px 120px 0 0 rgb(255, 0, 0),
+                        300px 120px 0 0 rgb(255, 0, 0),
+                        320px 120px 0 0 rgb(255, 0, 0),
+                        340px 120px 0 0 rgb(255, 0, 0),
+                        360px 120px 0 0 rgb(255, 0, 0),
+                        380px 120px 0 0 rgb(255, 0, 0)
+                    
+
+                        
+        } 
+    </style>
+</head>
+
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+            <path
+                d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
+            </path>
+        </svg> </a>
+    <main>
+        <header>
+            <h1>28 Challenge Shadow</h1>
+            <h2>Pixel Art (Bloo)</h2>
+        </header>
+        <section>
+            <figure class="frame">
+                <div class="squares"></div>
+                <div class="saitama"></div>
+            </figure>
+        </section>
+    </main>
+</body>
+
+</html>
