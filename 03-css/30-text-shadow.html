@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Text-Shadow</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        .demo-box {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-box h1 {
+            text-align: center;
+            text-shadow: 4px 4px 8px #333;
+        }
+
+        .demo-box p {
+            text-align: center;
+            font-size: 5rem;
+            font-weight: bold;
+            margin: 0 auto;
+            color: #fff;
+            text-shadow: 0 0 7px #fff,
+                0 0 10px #ffffff,
+                0 0 21px #ff0404,
+                0 0 42px rgb(255, 0, 0),
+                0 0 82px rgb(221, 255, 0),
+                0 0 92px rgb(0, 0, 0),
+                0 0 102px rgb(255, 0, 0),
+                0 0 151px rgb(255, 234, 0);
+        }
+
+        .neontext {
+            animation: flicker 1.5s infinite alternate;
+            color: #fff;
+        }
+
+        .demo-box h3 {
+            text-align: center;
+            font-size: 4.5rem;
+            color: #fff;
+        }
+
+        @keyframes flicker {
+
+            0%,
+            18%,
+            22%,
+            25%,
+            53%,
+            57%,
+            100% {
+
+                text-shadow:
+                    0 0 2px #333,
+                    0 0 9px #333,
+                    0 0 17px #333,
+                    0 0 38px rgb(255, 0, 0),
+                    0 0 78px rgb(255, 0, 0),
+                    0 0 88px rgb(255, 0, 0),
+                    0 0 98px rgb(255, 0, 0),
+                    0 0 148px rgb(255, 0, 0);
+            }
+
+            20%,
+            24%,
+            55% {
+                text-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+            <path
+                d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
+            </path>
+        </svg> </a>
+    <main>
+        <header>
+            <h1>30-Text-Shadow</h1>
+            <h2>Añade sombras al texto.</h2>
+        </header>
+        <div class="demo-box">
+            <section>
+                <h1>ADSO</h1>
+            </section>
+            <section>
+                <p>2026</p>
+            </section>
+            <section>
+                <h3 class="neontext">40% OFF</h3>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

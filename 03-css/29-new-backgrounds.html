@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-Document</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+</head>
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+    </a>
+    <main>
+        <style>
+            section div {
+                border: 4px solid #000d;
+                border-radius: 10px;
+                margin: 1rem auto;
+                width: 319px;
+                height: 320px;
+            }
+
+            /* ===== MULTIPLES IMÁGENES DE FONDO ===== */
+            div.multiples {
+                background: url(imgs/bg3.png), 
+                            url(imgs/bg2.png),
+                            url(imgs/bg1.png);
+        
+                height: 453px;
+            }
+
+            /* ===== GRADIENTES LINEALES ===== */
+            div.gradient1 {
+                background: linear-gradient(to top, #100441, #7557ea);
+            }
+
+            div.gradient2 {
+                background: linear-gradient(45deg, #87ea87, #033109);
+            }
+
+            div.gradient3 {
+                background: linear-gradient(to bottom,
+                    #ffcd00 50%,
+                    #003087 50%,
+                    #003087 75%,
+                    #c8102e 75%);
+            }
+
+            div.gradient4 {
+                background: linear-gradient(90deg,
+                    #000 25%,
+                    #333 25%,
+                    #333 40%,
+                    #fff 40%,
+                    #fff 60%,
+                    #333 60%,
+                    #333 80%,
+                    #fff 80%);
+                background-size: 37px 100%;
+            }
+
+            div.gradient5 {
+                background: radial-gradient(circle, #caa1e7, #333 50%);
+            }
+
+            /* ===== BULLSEYE ===== */
+            div.gradient6 {
+                background: radial-gradient(circle,
+                    #fff 0%,
+                    #fff 20%,
+                    #000 20%,
+                    #000 40%,
+                    #fff 40%,
+                    #fff 60%,
+                    #000 60%,
+                    #000 80%,
+                    #fff 80%,
+                    #fff 100%);
+            }
+
+            /* ===== CONIC GRADIENT ===== */
+            div.gradient7 {
+                background: conic-gradient(from 0deg, red, yellow, green, blue, red);
+                border-radius: 50%;
+            }
+
+            /* ===== BACKGROUND CLIP ===== */
+            h4.clip1 {
+                background: linear-gradient(45deg, #82009f, #f7345e);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 4rem;
+                text-align: center;
+                margin: 0;
+            }
+
+            h4.clip2 {
+                background: url(imgs/bgfire.jpg) no-repeat center / cover;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 4rem;
+                text-align: center;
+                margin: 0;
+            }
+
+            /* ===== MASK ===== */
+            div.mask {
+                width: 200px;
+                height: 400px;
+                background: linear-gradient(to bottom, red, yellow);
+                margin: 2rem auto;
+                mask-image: url(imgs/mask.svg);
+                -webkit-mask-image: url(imgs/mask.svg);
+                mask-size: 100% 100%;
+                -webkit-mask-size: 100% 100%;
+            }
+
+            /* ===== AJUSTES ADICIONALES ===== */
+            h3, h5 {
+                text-align: center;
+            }
+
+            .multiples {
+                border: 4px solid #000d;
+                border-radius: 10px;
+                margin: 1rem auto;
+            }
+        </style>
+
+        <header>
+            <h1>01-Document</h1>
+            <h2>Defines basic structure of an HTML5 document.</h2>
+        </header>
+
+        <section>
+            <h3>Bgs Multiples</h3>
+            <div class="multiples"></div>
+
+            <h3>Bgs Gradiants</h3>
+            <h5>Linear-gradient(to direction, color1, color2)</h5>
+            <div class="gradient1"></div>
+
+            <h5>Linear-gradient(degrees, color1, color2)</h5>
+            <div class="gradient2"></div>
+
+            <h5>Colombia Flag</h5>
+            <div class="gradient3"></div>
+
+            <h5>Vertical Lines</h5>
+            <div class="gradient4"></div>
+
+            <h5>Radial-gradient(color1, color2)</h5>
+            <div class="gradient5"></div>
+
+            <h5>BullsEye</h5>
+            <div class="gradient6"></div>
+
+            <h5>Conic-Gradient(color1, color2)</h5>
+            <div class="gradient7"></div>
+
+            <h3>Bgs Clip:</h3>
+            <h4 class="clip1">ADSO</h4>
+            <h4 class="clip2">fire</h4>
+
+            <h3>BG Mask:</h3>
+            <div class="mask"></div>
+        </section>
+    </main>
+</body>
+</html>

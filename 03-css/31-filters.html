@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31-Filters</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        img.filter {
+            border: none;
+            border-radius: 0;
+            object-fit: contain;
+            display: block;
+            margin-inline: auto;
+            transition: all 0.7s ease-in;
+            width: 400px;
+        }
+
+        img.filter:hover {
+            filter: none;
+        }
+
+        img.filter1 {
+            filter: grayscale(1);
+        }
+
+        img.filter2 {
+            filter: blur(6px);
+        }
+
+        img.filter3 {
+            filter: sepia(1);
+        }
+
+        img.filter4 {
+            filter: brightness(50%);
+        }
+
+        img.filter5 {
+            filter: invert(1);
+        }
+    </style>
+</head>
+<body>
+    <a class="btn-home" href="../03-css/index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <!-- SVG content here -->
+        </svg>
+    </a>
+    <main>
+        <header>
+            <h1>31-Filters</h1>
+            <h2>Defines visual effects (like blur and saturation)</h2>
+        </header>
+        <section>
+            <h3>GrayScale</h3>
+            <img class="filter filter1" src="imgs/bmw.png" alt="Inosuke">
+            
+            <h3>Blur</h3>
+            <img class="filter filter2" src="imgs/bmw.png" alt="Inosuke">
+            
+            <h3>Sepia</h3>
+            <img class="filter filter3" src="imgs/bmw.png" alt="Inosuke">
+            
+            <h3>Brightness</h3>
+            <img class="filter filter4" src="imgs/bmw.png" alt="Inosuke">
+            
+            <h3>Invert</h3>
+            <img class="filter filter5" src="imgs/bmw.png" alt="Inosuke">
+        </section>
+    </main>
+</body>
+</html>
