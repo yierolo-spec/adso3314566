@@ -1,0 +1,83 @@
+<!---->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transitions</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        main section {
+            img {
+                border: none;
+                border-radius: 0;
+                filter: drop-shadow(0 0 12px #fff);
+            }
+            img.transition01 {
+                transition: transform 1.5s ease-in;
+                &:hover {
+                    transform: scale(1.5);
+                }
+            }
+            img.transition02 {
+                transition: transform 1.5s ease-in;
+                &:hover {
+                    transform: Rotate(-360deg);
+                }
+            }
+            img.transition03 {
+                transition: transform 0.7s ease-in-out;
+                &:hover {
+                    transform: rotateY(360deg);
+                }
+            }
+            img.transition04 {
+                transition: transform 1.5s linear;
+                &:hover {
+                    transform: translateX(90px);
+                }
+            }
+            div.box {
+                background-color: #fff;
+                height: 80px;
+                margin-block: 2rem;
+                width: 80px;
+                transition: width 1s,
+                            height 2s,
+                            background-color 2s 1s;
+                &:hover {
+                    background-color: #f00;
+                    width: 300px;
+                    height: 160px;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>    </a>
+    <main>
+        <header>
+            <h1>01-Document</h1>
+            <h2>Defines basic structure of an HTML5 document.</h2>
+        </header>
+        <section>
+            <h3>scale(1.5):</h3>
+            <img class="transition01" src="imgs/dk.png" alt="DK">
+            <h3>rotate(-108deg):</h3>
+            <img class="transition02" src="imgs/dk.png" alt="DK">
+            <h3>RotateY(180deg):</h3>
+            <img class="transition03" src="imgs/dk.png" alt="DK">
+            <h3>TranslateX(100px):</h3>
+            <img class="transition04" src="imgs/dk.png" alt="DK">   
+            <div class="box" src="imgs/dk.png" alt="DK">
+            <h3>Multiple:</h3>
+            </div>
+            </section>
+    </main>
+</body>
+</html>
+
+
