@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jujutsu Kaisen • Expansión de Dominio</title>
+  <style>
+    :root {
+      --bg-dark: #07070b;
+      --bg-card: #111116;
+      --text-bright: #ece9e4;
+      --text-dim: #9490a0;
+      --cursed-purple: #7c3aed;
+      --blood-red: #ef4444;
+      --border-color: #22222a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-bright);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      padding: 3rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(124, 58, 237, 0.12), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(239, 68, 68, 0.08), transparent 40%);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--text-bright) 30%, var(--cursed-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
+
+    /* ---------- GRID RESPONSIVO SUPERIOR ---------- */
+    .grid-jujutsu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 5rem;
+    }
+
+    .tarjeta {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      cursor: pointer;
+      transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .tarjeta:hover {
+      border-color: var(--cursed-purple);
+      transform: translateY(-5px);
+    }
+
+    .tarjeta.sukuna:hover {
+      border-color: var(--blood-red);
+    }
+
+    .wrapper-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background-color: #16161f;
+    }
+
+    .wrapper-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.5s ease;
+    }
+
+    .tarjeta:hover .wrapper-img img {
+      transform: scale(1.06);
+    }
+
+    .pestaña-nombre {
+      background-color: #0b0b0f;
+      padding: 1rem;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .pestaña-nombre h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .tarjeta:hover .pestaña-nombre h3 { color: var(--cursed-purple); }
+    .tarjeta.sukuna:hover .pestaña-nombre h3 { color: var(--blood-red); }
+
+
+    /* ---------- SECCIÓN DE DESCRIPCIONES (ESTILO IMAGEN) ---------- */
+    .seccion-descripciones {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .bloque-detalle {
+      display: flex;
+      gap: 2rem;
+      background-color: #0c0c10;
+      border: 1px solid #1a1a24;
+      border-radius: 8px;
+      padding: 1.5rem;
+      align-items: center;
+    }
+
+    .bloque-detalle .box-foto {
+      width: 150px;
+      height: 180px;
+      flex-shrink: 0;
+      border-radius: 6px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(239, 68, 68, 0.2), transparent);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .bloque-detalle .box-foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bloque-info {
+      flex: 1;
+    }
+
+    .bloque-info .rol {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--blood-red);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .bloque-info h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #d4e74e; /* Tono verde/amarillo brillante idéntico al de tu captura */
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .bloque-info p {
+      color: var(--text-bright);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    footer {
+      margin-top: 5rem;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+
+    /* ---------- RESPONSIVO PARA LOS BLOQUES BAJOS ---------- */
+    @media (max-width: 640px) {
+      .bloque-detalle {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+      .bloque-detalle .box-foto {
+        width: 130px;
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Jujutsu Kaisen</h1>
+    <p>Registro de Hechiceros y Maldiciones • Escuela Técnica de Tokio</p>
+  </header>
+
+  <!-- GRID DE TARJETAS (ARRIBA) -->
+  <main class="grid-jujutsu">
+    <div class="tarjeta">
+      <div class="wrapper-img"><img src="imgs/yuji itadori.jpg" alt="Yuji Itadori"></div>
+      <div class="pestaña-nombre"><h3>Yuji Itadori</h3></div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="wrapper-img"><img src="imgs/megumi fushiguro.jpg" alt="Megumi Fushiguro"></div>
+      <div class="pestaña-nombre"><h3>Megumi Fushiguro</h3></div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="wrapper-img"><img src="imgs/nobara kugisaki.jpg" alt="Nobara Kugisaki"></div>
+      <div class="pestaña-nombre"><h3>Nobara Kugisaki</h3></div>
+    </div>
+
+    <div class="tarjeta sukuna">
+      <div class="wrapper-img"><img src="imgs/sukuna.jpg" alt="Sukuna"></div>
+      <div class="pestaña-nombre"><h3>Ryomen Sukuna</h3></div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="wrapper-img"><img src="imgs/maki_zenin.jpg" alt="Maki Zenin"></div>
+      <div class="pestaña-nombre"><h3>Maki Zenin</h3></div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="wrapper-img"><img src="imgs/kento_nanami.jpg" alt="Kento Nanami"></div>
+      <div class="pestaña-nombre"><h3>Kento Nanami</h3></div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="wrapper-img"><img src="imgs/satoru_gojo.jpg" alt="Satoru Gojo"></div>
+      <div class="pestaña-nombre"><h3>Satoru Gojo</h3></div>
+    </div>
+  </main>
+
+  <!-- BLOQUES DE DESCRIPCIÓN DETALLADA (ABAJO) -->
+  <section class="seccion-descripciones">
+
+    <!-- DETALLE YUJI -->
+    <article class="bloque-detalle">
+      <div class="box-foto"><img src="" alt="Yuji"></div>
+      <div class="bloque-info">
+        <span class="rol">Protagonista</span>
+        <h2>Yuji Itadori</h2>
+        <p>Tras tragar un dedo maldito para salvar a sus compañeros, se convierte en el recipiente de Sukuna, el Rey de las Maldiciones.</p>
+      </div>
+    </article>
+
+    <!-- DETALLE MEGUMI -->
+    <article class="bloque-detalle">
+      <div class="box-foto"><img src="" alt="Megumi"></div>
+      <div class="bloque-info">
+        <span class="rol">Hechicero de Linaje Noble</span>
+        <h2>Megumi Fushiguro</h2>
+        <p>Estudiante de primer año controlado y calmado. Utiliza la Técnica de Diez Sombras para invocar diversos Shikigamis y combatir amenazas desde la estrategia.</p>
+      </div>
+    </article>
+
+    <!-- DETALLE NOBARA -->
+    <article class="bloque-detalle">
+      <div class="box-foto"><img src="" alt="Nobara"></div>
+      <div class="bloque-info">
+        <span class="rol">Hechicera de Resonancia</span>
+        <h2>Nobara Kugisaki</h2>
+        <p>Una joven con una fuerte convicción que pelea usando un martillo, clavos y muñecos vudú, canalizando energía maldita de manera letal a largas distancias.</p>
+      </div>
+    </article>
+
+    <!-- DETALLE SUKUNA -->
+    <article class="bloque-detalle">
+      <div class="box-foto"><img src="" alt="Sukuna"></div>
+      <div class="bloque-info">
+        <span class="rol">Rey de las Maldiciones</span>
+        <h2>Ryomen Sukuna</h2>
+        <p>Un espíritu maligno implacable de hace mil años. Coexiste dentro del cuerpo de Yuji, esperando el momento exacto para desatar el caos absoluto.</p>
+      </div>
+    </article>
+
+    <!-- DETALLE MAKI -->
+    <article class="bloque-detalle">
+      <div class="box-foto"><img src="" alt="Maki"></div>
+      <div class="bloque-info">
+        <span class="rol">Experta en Armas Malditas</span>
+        <h2>Maki Zenin</h2>
+        <p>Pese a no tener energía maldita innata ni poder ver maldiciones sin sus lentes, posee habilidades físicas sobrehumanas que superan a la mayoría de los hechiceros comunes.</p>
+      </div>
+    </article>
+
+    <!-- DETALLE NANAMI -->
+    <article class="bloque-detalle">
+      <div class="box-foto"><img src="" alt="Nanami"></div>
+      <div class="bloque-info">
+        <span class="rol">Hechicero de Grado 1</span>
+        <h2>Kento Nanami</h2>
+        <p>Exoficinista metódico y reservado que regresó al mundo de la hechicería. Su técnica le permite crear un punto débil en su oponente basándose en una proporción de 7:3.</p>
+      </div>
+    </article>
+
+    <!-- DETALLE GOJO -->
+    <article class="bloque-detalle">
+      <div class="box-foto"><img src="" alt="Gojo"></div>
+      <div class="bloque-info">
+        <span class="rol">El Hechicero Más Fuerte</span>
+        <h2>Satoru Gojo</h2>
+        <p>Profesor de la academia y el pilar del mundo de la hechicería. Domina la técnica del Ilimitado y posee los "Seis Ojos", lo que lo vuelve prácticamente intocable en batalla.</p>
+      </div>
+    </article>
+
+  </section>
+
+  <footer>
+    SISTEMA DE MONITOREO DE ENERGÍA MALDITA • RESPONSIVE GRID
+  </footer>
+
+</body>
+</html>
